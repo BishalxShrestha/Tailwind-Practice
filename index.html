@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awesome Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for dark mode class strategy
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB', // blue-600
+            secondary: '#1E40AF', // blue-800
+            accent: '#FBBF24', // amber-400
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Custom scrollbar for dark mode */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #2563EB;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background-color: #fbbf24;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 font-sans">
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-white dark:bg-gray-800 shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary dark:text-accent">BrandName</a>
+      <ul class="hidden md:flex space-x-8 text-gray-700 dark:text-gray-300">
+        <li><a href="#hero" class="hover:text-primary dark:hover:text-accent transition">Home</a></li>
+        <li><a href="#features" class="hover:text-primary dark:hover:text-accent transition">Features</a></li>
+        <li><a href="#contact" class="hover:text-primary dark:hover:text-accent transition">Contact</a></li>
+      </ul>
+      <button id="dark-toggle" aria-label="Toggle Dark Mode" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+      <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 px-6 pb-4">
+      <ul class="space-y-4 text-gray-700 dark:text-gray-300">
+        <li><a href="#hero" class="block hover:text-primary dark:hover:text-accent transition">Home</a></li>
+        <li><a href="#features" class="block hover:text-primary dark:hover:text-accent transition">Features</a></li>
+        <li><a href="#contact" class="block hover:text-primary dark:hover:text-accent transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="pt-24 min-h-screen flex flex-col justify-center items-center text-center px-6" data-aos="fade-up">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+      Welcome to Our Awesome Website
+    </h1>
+    <p class="text-lg md:text-xl max-w-3xl mb-8 text-gray-700 dark:text-gray-300">
+      Build modern, responsive, and beautiful websites with ease using Tailwind CSS and JavaScript.
+    </p>
+    <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+      Contact Us
+    </a>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-3 gap-12" data-aos="fade-up" data-aos-delay="200">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center transition-transform transform hover:scale-105">
+      <i class="fas fa-bolt text-primary text-5xl mb-4"></i>
+      <h3 class="text-2xl font-semibold mb-2">Fast Performance</h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        Experience lightning-fast load times and smooth interactions.
+      </p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+      <i class="fas fa-mobile-alt text-primary text-5xl mb-4"></i>
+      <h3 class="text-2xl font-semibold mb-2">Responsive Design</h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        Looks great on any device, from phones to desktops.
+      </p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center transition-transform transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+      <i class="fas fa-paint-brush text-primary text-5xl mb-4"></i>
+      <h3 class="text-2xl font-semibold mb-2">Modern Aesthetics</h3>
+      <p class="text-gray-700 dark:text-gray-300">
+        Clean, stylish, and user-friendly interfaces.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-100 dark:bg-gray-800 py-20 px-6" data-aos="fade-up" data-aos-delay="300">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">Contact Us</h2>
+      <form class="space-y-6" action="#" method="POST">
+        <div>
+          <label for="name" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label for="email" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+        </div>
+        <div>
+          <label for="message" class="block mb-2 font-semibold text-gray-700 dark:text-gray-300">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-900 py-8 mt-12 shadow-inner">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-gray-700 dark:text-gray-300">
+      <p class="text-sm">&copy; 2024 BrandName. All rights reserved.</p>
+      <div class="space-x-6 mt-4 md:mt-0">
+        <a href="#" aria-label="Facebook" class="hover:text-primary dark:hover:text-accent transition">
+          <i class="fab fa-facebook-f text-lg"></i>
+        </a>
+        <a href="#" aria-label="Twitter" class="hover:text-primary dark:hover:text-accent transition">
+          <i class="fab fa-twitter text-lg"></i>
+        </a>
+        <a href="#" aria-label="Instagram" class="hover:text-primary dark:hover:text-accent transition">
+          <i class="fab fa-instagram text-lg"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-primary dark:hover:text-accent transition">
+          <i class="fab fa-linkedin-in text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
+
+    // Dark mode toggle
+    const darkToggle = document.getElementById('dark-toggle');
+    const htmlElement = document.documentElement;
+    const darkIcon = darkToggle.querySelector('i');
+
+    // Initialize dark mode based on localStorage or system preference
+    if (
+      localStorage.getItem('theme') === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      htmlElement.classList.add('dark');
+      darkIcon.classList.remove('fa-moon');
+      darkIcon.classList.add('fa-sun');
+    }
+
+    darkToggle.addEventListener('click', () => {
+      htmlElement.classList.toggle('dark');
+      if (htmlElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+        darkIcon.classList.remove('fa-moon');
+        darkIcon.classList.add('fa-sun');
+      } else {
+        localStorage.setItem('theme', 'light');
+        darkIcon.classList.remove('fa-sun');
+        darkIcon.classList.add('fa-moon');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
